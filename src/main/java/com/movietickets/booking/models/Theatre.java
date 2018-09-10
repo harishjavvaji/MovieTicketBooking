@@ -1,14 +1,14 @@
 package com.movietickets.booking.models;
 
-public class theatre {
+public class Theatre {
 
     private String theatreName, city;
     private int zipcode;
 
-    public theatre() {
+    public Theatre() {
     }
 
-    public theatre(String theatreName, String city, int zipcode) {
+    public Theatre(String theatreName, String city, int zipcode) {
         this.theatreName = theatreName;
         this.city = city;
         this.zipcode = zipcode;
