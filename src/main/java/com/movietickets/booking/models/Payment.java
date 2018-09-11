@@ -1,28 +1,39 @@
 package com.movietickets.booking.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "paymentdata", schema = "movieticketbooking")
 public class Payment {
 
-   private int cardNumber;
+    @Id
+    @Column(name = "cardnumber")
+   private String cardNumber;
+    @Column(name = "cardholdername")
    private String cardHolderName;
+    @Column(name = "month")
    private int month;
+    @Column(name = "year")
    private int year;
 
     public Payment() {
     }
 
-    public Payment(int cardNumber, String cardHolderName, int month, int year) {
-
+    public Payment(String cardNumber, String cardHolderName, int month, int year) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
         this.month = month;
         this.year = year;
     }
 
-    public int getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(int cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 

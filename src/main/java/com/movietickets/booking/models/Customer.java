@@ -1,13 +1,29 @@
 package com.movietickets.booking.models;
 
-public class Customer {
-   private String firstName;
-   private String lastName;
-   private String email;
-   private String userName;
-   private String password;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-    public Customer(){
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "customerdata", schema = "movieticketbooking")
+public class Customer {
+    @Column(name = "firstname")
+    private String firstName;
+    @Column(name = "lastname")
+    private String lastName;
+    @Column(name = "email")
+    private String email;
+    @Id
+    @Column(name = "username")
+    private String userName;
+    @Column(name = "password")
+    private String password;
+
+
+    public Customer() {
 
     }
 

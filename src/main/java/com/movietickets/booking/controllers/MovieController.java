@@ -16,6 +16,9 @@ public class MovieController {
 
     @RequestMapping(value = "/movies",method = RequestMethod.GET)
     public  List<Movie> getAllMovies(){
-        return movieService.getAllMovies();
+
+        List<Movie> list =  movieService.getAllMovies();
+        System.out.println(list.get(0).getMovieName());
+        return list;
     }
 }
