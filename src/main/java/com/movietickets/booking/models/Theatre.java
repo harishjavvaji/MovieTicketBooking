@@ -1,8 +1,21 @@
 package com.movietickets.booking.models;
 
-public class Theatre {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    private String theatreName, city, time;
+@Entity
+@Table(name = "theatredata", schema = "movieticketbooking")
+public class Theatre {
+    @Column(name = "theatrename")
+    private String theatreName;
+    @Column(name = "city")
+    private String city;
+    @Id
+    @Column(name = "time")
+    private String time;
+    @Column(name = "zipcode")
     private int zipcode;
 
     public Theatre() {

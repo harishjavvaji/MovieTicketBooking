@@ -2,21 +2,30 @@ package com.movietickets.booking.models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ticketdata", schema = "movieticketbooking")
 public class Ticket {
+    @Id
+    @Column(name = "username")
     private String userName;
-    @Autowired
-    private Movie movie;
-    @Autowired
-    private Theatre theatre;
+    @Column(name = "moviename")
+    private String movieName;
+    @Column(name = "theatrename")
+    private String theatreName;
 
     public  Ticket(){
 
     }
 
-    public Ticket(String userName, Movie movie, Theatre theatre) {
+    public Ticket(String userName, String movieName, String theatreName) {
         this.userName = userName;
-        this.movie = movie;
-        this.theatre = theatre;
+        this.movieName = movieName;
+        this.theatreName = theatreName;
     }
 
     public String getUserName() {
@@ -27,19 +36,19 @@ public class Ticket {
         this.userName = userName;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public String getMovieName() {
+        return movieName;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
-    public Theatre getTheatre() {
-        return theatre;
+    public String getTheatreName() {
+        return theatreName;
     }
 
-    public void setTheatre(Theatre theatre) {
-        this.theatre = theatre;
+    public void setTheatreName(String theatreName) {
+        this.theatreName = theatreName;
     }
 }
