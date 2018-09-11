@@ -11,8 +11,10 @@ import java.util.function.Consumer;
 
 @Service
 public class CustomerService {
+
     @Autowired
     CustomerRepository customerRepository;
+
     public List<Customer>  getAllCustomers(){
         List<Customer> customers=new ArrayList<>();
         customerRepository.findAll().forEach(new Consumer<Customer>() {
