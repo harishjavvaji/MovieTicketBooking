@@ -2,7 +2,8 @@ package com.movietickets.booking.models;
 
 public class Movie {
 
-    private String movieName, actorName;
+    private String movieName;
+    private String actorName;
     private String genre, length;
 
     public Movie(String movieName, String actorName, String genre, String length) {

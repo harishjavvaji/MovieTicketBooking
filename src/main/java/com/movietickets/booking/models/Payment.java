@@ -2,13 +2,15 @@ package com.movietickets.booking.models;
 
 public class Payment {
 
-    String cardNumber, cardHolderName;
-    int month, year;
+   private int cardNumber;
+   private String cardHolderName;
+   private int month;
+   private int year;
 
     public Payment() {
     }
 
-    public Payment(String cardNumber, String cardHolderName, int month, int year) {
+    public Payment(int cardNumber, String cardHolderName, int month, int year) {
 
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
@@ -16,11 +18,11 @@ public class Payment {
         this.year = year;
     }
 
-    public String getCardNumber() {
+    public int getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
+    public void setCardNumber(int cardNumber) {
         this.cardNumber = cardNumber;
     }
 

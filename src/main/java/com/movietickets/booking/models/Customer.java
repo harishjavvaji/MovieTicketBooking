@@ -1,5 +1,6 @@
 package com.movietickets.booking.models;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,6 +27,14 @@ public class Customer {
 
 
     public Customer() {
+public class Customer {
+   private String firstName;
+   private String lastName;
+   private String email;
+   private String userName;
+   private String password;
+
+    public Customer(){
 
     }
 
