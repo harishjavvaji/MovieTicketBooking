@@ -2,15 +2,16 @@ package com.movietickets.booking.models;
 
 public class Theatre {
 
-    private String theatreName, city;
+    private String theatreName, city, time;
     private int zipcode;
 
     public Theatre() {
     }
 
-    public Theatre(String theatreName, String city, int zipcode) {
+    public Theatre(String theatreName, String city, String time, int zipcode) {
         this.theatreName = theatreName;
         this.city = city;
+        this.time = time;
         this.zipcode = zipcode;
     }
 
@@ -28,6 +29,14 @@ public class Theatre {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public int getZipcode() {
