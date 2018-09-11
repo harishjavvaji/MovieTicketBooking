@@ -1,5 +1,32 @@
 package com.movietickets.booking.models;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class Customer {
+    @NotNull
+    @Column(name = "firstname")
+    @NotNull
+    private String firstName;
+    @Column(name = "lastname")
+    @NotNull
+    private String lastName;
+    @Column(name = "email")
+    @NotNull
+    private String email;
+    @Id
+    @Column(name = "username")
+    private String userName;
+    @NotNull
+    @Column(name = "password")
+    private String password;
+
+
+    public Customer() {
 public class Customer {
    private String firstName;
    private String lastName;
