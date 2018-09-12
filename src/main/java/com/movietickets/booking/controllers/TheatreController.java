@@ -1,5 +1,6 @@
 package com.movietickets.booking.controllers;
 
+import com.movietickets.booking.models.Movie;
 import com.movietickets.booking.models.Theatre;
 import com.movietickets.booking.services.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,12 @@ public class TheatreController {
 
     @RequestMapping(value = "/theatres",method = RequestMethod.GET)
     public List<Theatre> getAllTheatres(){
+
         return theatreService.getAllTheatres();
+    }
+    public List<Theatre> getTheatres(Movie movie){
+        return theatreService.getTheatres(movie);
+
     }
 
 }

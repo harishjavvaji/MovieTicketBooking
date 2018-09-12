@@ -24,4 +24,13 @@ public class TicketService {
         return tickets;
     }
 
+    public void createTicket(Ticket ticket){
+        ticketRepository.save(ticket);
+    }
+
+
+    public void deleteTicket(String userName){
+        ticketRepository.deleteById(userName);
+    }
+
 }

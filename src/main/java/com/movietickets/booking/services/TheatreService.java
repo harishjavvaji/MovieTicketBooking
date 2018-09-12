@@ -1,5 +1,6 @@
 package com.movietickets.booking.services;
 
+import com.movietickets.booking.models.Movie;
 import com.movietickets.booking.models.Theatre;
 import com.movietickets.booking.repositories.TheatreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,9 @@ public class TheatreService {
         });
         return theatres;
     }
+//    public List<Theatre> getTheatres(Movie movie) {
+////        List<Theatre> list=theatreRepository.;
+//        return list;
+//    }
 
 }

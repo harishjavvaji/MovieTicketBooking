@@ -4,9 +4,7 @@ import com.movietickets.booking.models.Customer;
 import com.movietickets.booking.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +16,21 @@ public class CustomerController {
 
     @RequestMapping(value = "/customers",method = RequestMethod.GET)
     public List<Customer> getAllCustomers(){
+
         return customerService.getAllCustomers();
+
+
+    }
+    @PostMapping(value = "/customers")
+    public void createCustomer(@RequestBody Customer customer) {
+         customerService.createCustomer(customer);
+    }
+
+    @RequestMapping(value = "/customer", method = RequestMethod.GET)
+    public Customer getCustomer(@RequestBody Customer customer) {
+
+        return customerService.getCustomer(customer);
+
     }
 
 }
