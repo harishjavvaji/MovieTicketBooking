@@ -33,4 +33,15 @@ public class CustomerController {
 
     }
 
+    @RequestMapping(value = "/customers", method = RequestMethod.POST)
+    public int registerCustomer(@RequestBody Customer customer) {
+        return customerService.registerCustomer(customer);
+    }
+
+    @RequestMapping(value = "/customer", method = RequestMethod.POST)
+    public Customer validateCustomer(@RequestBody Customer customer) {
+
+        return customerService.validateCustomer(customer);
+    }
+
 }
