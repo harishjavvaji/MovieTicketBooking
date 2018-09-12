@@ -1,11 +1,10 @@
 package com.movietickets.booking.controllers;
 
+import com.movietickets.booking.models.Theatre;
 import com.movietickets.booking.models.Ticket;
 import com.movietickets.booking.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,4 +16,16 @@ public class TicketController {
     public List<Ticket> getAllTickets(){
         return ticketService.getAllTickets();
     }
+
+    @PostMapping(value = "/customers")
+    public void createTicket(@RequestBody Ticket ticket) {
+        ticketService.createTicket(ticket);
+    }
+
+    @RequestMapping(value = "/employee")
+    public void deleteTicket(@RequestParam String userName){
+        ticketService.deleteTicket(userName);//http://localhost:8080/employee?empId=21
+    }
+
+
 }

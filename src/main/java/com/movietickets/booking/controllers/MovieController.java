@@ -14,11 +14,10 @@ public class MovieController {
     @Autowired
     MovieService movieService;
 
-    @RequestMapping(value = "/movies",method = RequestMethod.GET)
-    public  List<Movie> getAllMovies(){
+    @RequestMapping(value = "/movies", method = RequestMethod.GET)
+    public List<Movie> getAllMovies() {
 
-        List<Movie> list =  movieService.getAllMovies();
-        System.out.println(list.get(0).getMovieName());
-        return list;
+        return movieService.getAllMovies();
+
     }
 }

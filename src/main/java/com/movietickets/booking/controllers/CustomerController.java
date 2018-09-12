@@ -16,7 +16,21 @@ public class CustomerController {
 
     @RequestMapping(value = "/customers",method = RequestMethod.GET)
     public List<Customer> getAllCustomers(){
+
         return customerService.getAllCustomers();
+
+
+    }
+    @PostMapping(value = "/customers")
+    public void createCustomer(@RequestBody Customer customer) {
+         customerService.createCustomer(customer);
+    }
+
+    @RequestMapping(value = "/customer", method = RequestMethod.GET)
+    public Customer getCustomer(@RequestBody Customer customer) {
+
+        return customerService.getCustomer(customer);
+
     }
 
     @RequestMapping(value = "/customers", method = RequestMethod.POST)
