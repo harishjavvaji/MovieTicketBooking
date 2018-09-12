@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "theatredata", schema = "movieticketbooking")
+@Table(name = "theatredata")
 public class Theatre {
     @Column(name = "theatrename")
     private String theatreName;
