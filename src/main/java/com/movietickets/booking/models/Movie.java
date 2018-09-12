@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "moviesdata", schema = "movieticketbooking")
+@Table(name = "moviesdata")
 public class Movie {
 
     @Id

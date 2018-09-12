@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customerdata", schema = "movieticketbooking")
+@Table(name = "customerdata")
 public class Customer {
     @Column(name = "firstname")
     private String firstName;
