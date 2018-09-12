@@ -21,5 +21,9 @@ public class PaymentService {
         });
         return payments;
     }
+
+    public void createPayment(Payment payment){
+         paymentRepository.save(payment);
+    }
 }
 
