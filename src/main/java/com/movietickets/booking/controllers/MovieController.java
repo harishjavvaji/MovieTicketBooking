@@ -18,7 +18,8 @@ public class MovieController {
     @RequestMapping(value = "/movies", method = RequestMethod.GET)
     public List<Movie> getAllMovies() {
 
-        return movieService.getAllMovies();
+        List<Movie> movies =   movieService.getAllMovies();
+        return movies;
 
     }
 

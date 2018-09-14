@@ -102,4 +102,32 @@ public class TheatreService {
 
         return movieList;
     }
+
+    public Theatre getTheatre(Theatre theatre) {
+
+        String sql = "select * from theatredata where theatrename = (?)";
+
+        return jdbcTemplate.query(sql, new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement preparedStatement) throws SQLException {
+                preparedStatement.setString(1, theatre.getTheatreName());
+            }
+        }, new ResultSetExtractor<Theatre>() {
+            @Override
+            public Theatre extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+
+                Theatre theatre1 = new Theatre();
+                while (resultSet.next()) {
+
+                    theatre1.setTheatreName(resultSet.getString("theatrename"));
+                    theatre1.setMovieName(resultSet.getString("moviename"));
+                    theatre1.setZipcode(resultSet.getInt("zipcode"));
+                    theatre1.setTime(resultSet.getString("time"));
+                    theatre1.setCity(resultSet.getString("city"));
+                }
+
+                return theatre1;
+            }
+        });
+    }
 }

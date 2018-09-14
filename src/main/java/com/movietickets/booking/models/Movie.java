@@ -21,15 +21,27 @@ public class Movie {
 
     @Column(name = "length")
     private String length;
+    @Column(name = "image")
 
-    public Movie(String movieName, String actorName, String genre, String length) {
+    private String image;
+
+    public Movie(String movieName, String actorName, String genre, String length, String image) {
         this.movieName = movieName;
         this.actorName = actorName;
         this.genre = genre;
         this.length = length;
+        this.image = image;
     }
 
     public Movie() {
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getMovieName() {
