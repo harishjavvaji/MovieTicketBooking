@@ -41,13 +41,13 @@ public class CustomerService {
         return customers;
     }
 
-
-    public void createCustomer(Customer customer){
-         customerRepository.save(customer);
-    }
-
-    public Customer getCustomer(Customer customer) {
-        return customerRepository.findById(customer.getUserName()).get();
+//
+//    public void createCustomer(Customer customer){
+//         customerRepository.save(customer);
+//    }
+//
+//    public Customer getCustomer(Customer customer) {
+//        return customerRepository.findById(customer.getUserName()).get();}
 
     public int registerCustomer(Customer customer) {
 
@@ -73,18 +73,6 @@ public class CustomerService {
     public Customer validateCustomer(Customer customer) {
 
         String sql = "select username, password from customerdata where username = (?)";
-//
-//        return jdbcTemplate.query(sql, new ResultSetExtractor<Customer>() {
-//            @Override
-//            public Customer extractData(ResultSet resultSet) throws SQLException, DataAccessException {
-//                Customer customer1 = new Customer();
-//
-//                customer1.setUserName(resultSet.getString("username")) ;
-//                customer1.setPassword(resultSet.getString("password"));
-//
-//                return customer1;
-//            }
-//        });
 
 
         return jdbcTemplate.query(new PreparedStatementCreator() {

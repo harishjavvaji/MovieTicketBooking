@@ -22,5 +22,10 @@ public class PaymentController {
     public void createPayment(@RequestBody Payment payment) {
          paymentService.createPayment(payment);
     }
+    @PostMapping(value = "/payment")
+    public Payment getPayment(@RequestBody Payment payment) {
+        return paymentService.getPayment(payment);
+
+    }
 
 }

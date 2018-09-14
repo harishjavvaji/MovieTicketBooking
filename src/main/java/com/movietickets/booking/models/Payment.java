@@ -18,15 +18,26 @@ public class Payment {
    private int month;
     @Column(name = "year")
    private int year;
+    @Column(name = "username")
+    private String userName;
 
     public Payment() {
     }
 
-    public Payment(String cardNumber, String cardHolderName, int month, int year) {
+    public Payment(String cardNumber, String cardHolderName, int month, int year, String userName) {
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
         this.month = month;
         this.year = year;
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getCardNumber() {
