@@ -21,17 +21,6 @@ public class CustomerController {
 
 
     }
-    @PostMapping(value = "/customers")
-    public void createCustomer(@RequestBody Customer customer) {
-         customerService.createCustomer(customer);
-    }
-
-    @RequestMapping(value = "/customer", method = RequestMethod.GET)
-    public Customer getCustomer(@RequestBody Customer customer) {
-
-        return customerService.getCustomer(customer);
-
-    }
 
     @RequestMapping(value = "/customers", method = RequestMethod.POST)
     public int registerCustomer(@RequestBody Customer customer) {

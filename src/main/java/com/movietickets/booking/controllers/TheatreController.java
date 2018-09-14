@@ -4,6 +4,7 @@ import com.movietickets.booking.models.Movie;
 import com.movietickets.booking.models.Theatre;
 import com.movietickets.booking.services.TheatreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,9 +21,20 @@ public class TheatreController {
 
         return theatreService.getAllTheatres();
     }
-    public List<Theatre> getTheatres(Movie movie){
-        return theatreService.getTheatres(movie);
+//    public List<Theatre> getTheatres(Movie movie){
+//        return theatreService.getTheatres(movie);
+//
+//    }
 
+    @RequestMapping(value = "/theatres", method = RequestMethod.POST)
+    public List<Theatre> requiredTheatres(@RequestBody Movie movie) {
+        return theatreService.requiredTheatres(movie);
     }
 
+    @RequestMapping(value = "/theatre", method = RequestMethod.POST)
+    public List<Movie> getMovies(@RequestBody Theatre theatre) {
+
+        return theatreService.getMovies(theatre);
+
+    }
 }
