@@ -59,6 +59,7 @@ public class MovieService {
                     movie1.setActorName(resultSet.getString("actorname"));
                     movie1.setGenre(resultSet.getString("genre"));
                     movie1.setLength(resultSet.getString("length"));
+                    movie1.setImage(resultSet.getString("image"));
                 }
 
                 return movie1;

@@ -37,4 +37,11 @@ public class TheatreController {
         return theatreService.getMovies(theatre);
 
     }
+
+    @RequestMapping(value = "/getTheatre", method = RequestMethod.POST )
+    public Theatre getTheatre(@RequestBody Theatre theatre) {
+
+        return theatreService.getTheatre(theatre);
+
+    }
 }
