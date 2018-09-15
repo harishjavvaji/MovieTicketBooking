@@ -74,6 +74,8 @@ public class TicketService {
                     ticket.setTotalPrice(resultSet.getInt("totalprice"));
                     ticket.setUserName(resultSet.getString("username"));
                     ticket.setId(resultSet.getInt("id"));
+                    ticket.setMovieName(resultSet.getString("moviename"));
+                    ticket.setTheatreName(resultSet.getString("theatrename"));
                 }
 
                 return ticket;
