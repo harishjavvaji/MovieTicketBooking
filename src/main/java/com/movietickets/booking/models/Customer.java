@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customerdata", schema = "movieticketbooking")
+@Table(name = "customerdata")
 public class Customer {
     @Column(name = "firstname")
     private String firstName;
@@ -20,6 +20,7 @@ public class Customer {
     @Column(name = "username")
     private String userName;
     @Column(name = "password")
+
     private String password;
 
 

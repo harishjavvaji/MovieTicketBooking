@@ -1,22 +1,24 @@
 package com.movietickets.booking.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "theatredata", schema = "movieticketbooking")
+@Table(name = "theatredata")
 public class Theatre {
     @Column(name = "theatrename")
     private String theatreName;
     @Column(name = "city")
     private String city;
-    @Id
     @Column(name = "time")
     private String time;
     @Column(name = "zipcode")
     private int zipcode;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue
+    private int id;
+    @Column(name = "moviename")
+    private String movieName;
 
     public Theatre() {
     }
@@ -26,6 +28,14 @@ public class Theatre {
         this.city = city;
         this.time = time;
         this.zipcode = zipcode;
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
     public String getTheatreName() {
