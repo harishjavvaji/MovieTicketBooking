@@ -86,7 +86,8 @@ public class TicketService {
         KeyHolder holder = new GeneratedKeyHolder();
 
         String sql =
-                "insert into ticketdata(numberofadulttickets, adultticketprice, childticketprice, totalprice, numberofchildtickets, username) values (?,?,?,?,?,?)";
+                "insert into ticketdata(numberofadulttickets, adultticketprice, childticketprice, " +
+                        "totalprice, numberofchildtickets, username, moviename, theatrename) values (?,?,?,?,?,?,?,?)";
 
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
@@ -99,6 +100,8 @@ public class TicketService {
                 preparedStatement.setDouble(4, ticket.getTotalPrice());
                 preparedStatement.setInt(5, ticket.getNumberOfChildTickets());
                 preparedStatement.setString(6, ticket.getUserName());
+                preparedStatement.setString(7, ticket.getMovieName());
+                preparedStatement.setString(8, ticket.getTheatreName());
                 return preparedStatement;
             }
         }, holder);

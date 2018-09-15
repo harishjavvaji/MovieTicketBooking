@@ -39,8 +39,8 @@ public class PaymentService {
         return payments;
     }
 
-    public void createPayment(Payment payment){
-         paymentRepository.save(payment);
+    public Payment createPayment(Payment payment){
+        return paymentRepository.save(payment);
     }
 
     public Payment getPayment(Payment payment) {
