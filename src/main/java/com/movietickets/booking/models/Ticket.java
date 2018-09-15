@@ -30,14 +30,38 @@ public class Ticket {
     @Column(name = "username")
     private String userName;
 
-    public Ticket(int numberOfAdultTickets, int numberOfChildTickets, int totalPrice, String userName) {
+    @Column(name = "theatrename")
+    private String theatreName;
+
+    @Column(name = "moviename")
+    private String movieName;
+
+    public Ticket(int numberOfAdultTickets, int numberOfChildTickets, int totalPrice, String userName, String theatreName, String movieName) {
         this.numberOfAdultTickets = numberOfAdultTickets;
         this.numberOfChildTickets = numberOfChildTickets;
         this.totalPrice = totalPrice;
         this.userName = userName;
+        this.theatreName = theatreName;
+        this.movieName = movieName;
     }
 
     public Ticket() {
+    }
+
+    public String getTheatreName() {
+        return theatreName;
+    }
+
+    public void setTheatreName(String theatreName) {
+        this.theatreName = theatreName;
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
     public int getId() {
