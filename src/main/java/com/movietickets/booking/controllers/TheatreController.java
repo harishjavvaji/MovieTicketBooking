@@ -44,4 +44,5 @@ public class TheatreController {
         return theatreService.getTheatre(theatre);
 
     }
+
 }
