@@ -33,6 +33,7 @@ public class TicketController {
     @RequestMapping(value = "/cancelticket", method = RequestMethod.POST)
     public void deleteTicket(@RequestBody Customer customer){
         ticketService.deleteTicket(customer);
+
     }
 
 

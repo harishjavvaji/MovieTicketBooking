@@ -11,4 +11,5 @@ public interface TicketRepository extends CrudRepository<Ticket,String> {
 
     @Transactional
     public void deleteByUserName(String userName);
+
 }
