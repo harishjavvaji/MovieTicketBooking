@@ -49,10 +49,8 @@ public class TicketService {
     }
 
 
-    public Customer deleteTicket(Customer customer){
-
-        ticketRepository.deleteByUserName(customer.getUserName());
-        return customer;
+    public void deleteTicket(String userName){
+        ticketRepository.deleteById(userName);
     }
 
     public Ticket getTicket(Customer customer) {

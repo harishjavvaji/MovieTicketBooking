@@ -30,9 +30,9 @@ public class TicketController {
 //        ticketService.createTicket(ticket);
 //    }
 
-    @RequestMapping(value = "/cancelticket", method = RequestMethod.POST)
-    public Customer deleteTicket(@RequestBody Customer customer){
-        return ticketService.deleteTicket(customer);
+    @RequestMapping(value = "/ticket")
+    public void deleteTicket(@RequestParam String userName){
+        ticketService.deleteTicket(userName);//http://localhost:8080/employee?empId=21
     }
 
 
