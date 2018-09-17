@@ -31,8 +31,8 @@ public class TicketController {
 //    }
 
     @RequestMapping(value = "/cancelticket", method = RequestMethod.POST)
-    public void deleteTicket(@RequestBody Customer customer){
-        ticketService.deleteTicket(customer);
+    public Customer deleteTicket(@RequestBody Customer customer){
+        return ticketService.deleteTicket(customer);
 
     }
 
